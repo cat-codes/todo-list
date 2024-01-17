@@ -1,5 +1,5 @@
 #buttonTheme {
-    background-image: url('src/assets/theme.png');
+    background-image: url('../assets/theme.png');
     background-size: cover !important;
     border: none;
     background: none;

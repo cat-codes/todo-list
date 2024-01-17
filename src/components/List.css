@@ -155,7 +155,7 @@ button:hover::before {
 }
 
 #buttonAdd {
-    background-image: url('src/assets/plus.png');
+    background-image: url('../assets/plus.png');
     transition: scale 0.3s ease;
     
 }
@@ -165,7 +165,7 @@ button:hover::before {
 }
 
 #buttonSort {
-    background-image: url('src/assets/sort.png');
+    background-image: url('../assets/sort.png');
     transition: scale 0.3s ease;
 }
 
@@ -174,7 +174,7 @@ button:hover::before {
 }
 
 #buttonRemove {
-    background-image: url('src/assets/delete.png');
+    background-image: url('../assets/delete.png');
     opacity: 0;
 }
 
@@ -193,7 +193,7 @@ button:hover::before {
 }
 
 #buttonPurge {
-    background-image: url('src/assets/delete-all.png');
+    background-image: url('../assets/delete-all.png');
     transition: scale 0.3s ease;
 }
 
