@@ -1,0 +1,228 @@
+#all {
+    height: 550px;
+    border-style: solid;
+    border-color: #403528;
+    border-radius: 15px;
+    box-shadow: 5px 10px rgba(64, 53, 40, 0.7);
+    background-color: rgba(242, 237, 228, 0.85);
+}
+
+.divPiece {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+/* Top */
+
+#top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 120px;
+    z-index: 99;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 3px solid #403528;
+    border-radius: 15px 15px 0 0;
+    padding: 20px 0;
+    background-color: rgba(232, 160, 73, 0.4);
+    border-style: solid;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 0 0 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    padding: 8px 15px;
+    margin: 0 10px;
+    border-radius: 50px;
+    cursor: text;
+    font-size: 16px;
+}
+
+/* Middle */
+
+#middle {
+    position: relative;
+    top: 160px;
+    left: 0;
+    height: 315px;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+ul {
+    padding-inline-start: 0;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+    border-bottom: 1px solid white;
+    font-size: 16px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#taskNoButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.taskList input:checked + span { /*Select the span element that is an immediate sibling following a checked input element within an element with the class listItem.*/
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+/* Bottom */
+
+#bottom {
+    position: fixed;
+    bottom: 28px;
+    left: 0;
+    height: 50px;
+    z-index: 99;
+    justify-content: space-evenly;
+    border-top: 3px solid #403528;
+    border-radius: 0 0 15px 15px;
+    padding: 10px 0;
+    background-color: rgba(72, 23, 185, 0.4);
+    border-style: solid;
+}
+
+/* Buttons */
+
+button, #checkbox {
+    background-size: cover !important;
+    border: none;
+    background: none;
+    margin: 0 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    scale: 100%;
+}
+
+button:hover {
+    scale: 130%;
+    transition: opacity 0.3s ease-out;
+}
+
+button::before {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    background-color: #fff;
+    color: #333;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    top: -23px;
+    left: 100%;
+    position: absolute;
+    transform: translateX(-10px) scale(0);
+    opacity: 0;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    transform-origin: bottom left;
+    transition-delay: 0s;
+}
+
+button:hover::before {
+    opacity: 1;
+    transform: translateX(-10px) scale(1);
+    transition-delay: 1s;
+}
+
+#buttonAdd {
+    background-image: url('src/assets/plus.png');
+    transition: scale 0.3s ease;
+    
+}
+
+#buttonAdd::before {
+    content: "Add task";
+}
+
+#buttonSort {
+    background-image: url('src/assets/sort.png');
+    transition: scale 0.3s ease;
+}
+
+#buttonSort::before {
+    content: "Sort tasks";
+}
+
+#buttonRemove {
+    background-image: url('src/assets/delete.png');
+    opacity: 0;
+}
+
+.taskList li:hover #buttonRemove {
+    opacity: 1;
+    transition: opacity 0.3s ease, scale 0.3s ease;
+    z-index: 100;
+}
+
+.taskList li:hover #buttonRemove::before {
+    content: "Remove task";
+    top: 23px;
+    left: -100%;
+    position: absolute;
+    transform: translateX(-30px)
+}
+
+#buttonPurge {
+    background-image: url('src/assets/delete-all.png');
+    transition: scale 0.3s ease;
+}
+
+#buttonPurge::before {
+    content: "Remove all tasks";
+}
+
+/* Track */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(64, 53, 40, 0.5);
+    border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(64, 53, 40, 0.8);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle when scrolling */
+::-webkit-scrollbar-thumb:active {
+    background-color: rgba(64, 53, 40);
+}
