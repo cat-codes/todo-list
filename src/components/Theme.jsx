@@ -17,13 +17,14 @@ function Theme() {
 
     // Updates local storage
     useEffect(() => {
-        localStorage.setItem("theme", theme);
-        toggleTheme();
-    }, [theme, toggleTheme]);    
+        if (theme !== darkTheme) {
+            localStorage.setItem("theme", theme);
+        }
+    }, [theme, darkTheme]);    
     
     return (
         <button className={darkTheme ? 'darkButton' : 'button'} id='buttonTheme' type='button' onClick={toggleTheme}/>
-    )
+    );
 }
 
-export default Theme
+export default Theme;
