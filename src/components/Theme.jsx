@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Theme.css'
-import { GetThemeValue } from './contextTheme';
+import { GetThemeValue } from './ContextTheme';
 
 function Theme() {
 
