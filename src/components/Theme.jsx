@@ -18,7 +18,8 @@ function Theme() {
     // Updates local storage
     useEffect(() => {
         localStorage.setItem("theme", theme);
-    }, [theme]);    
+        toggleTheme();
+    }, [theme, toggleTheme]);    
     
     return (
         <button className={darkTheme ? 'darkButton' : 'button'} id='buttonTheme' type='button' onClick={toggleTheme}/>
