@@ -4,7 +4,7 @@ import { GetThemeValue } from './ContextTheme';
 
 function Theme() {
 
-    const {toggleTheme} = GetThemeValue();
+    const {darkTheme, toggleTheme} = GetThemeValue();
 
     // Sets theme
     const [theme, setTheme] = useState('light');
@@ -21,7 +21,7 @@ function Theme() {
     }, [theme]);    
     
     return (
-        <img src='src\assets\theme.png' onClick={toggleTheme}></img>
+        <button className={darkTheme ? 'darkButton' : 'button'} id='buttonTheme' type='button' onClick={toggleTheme}/>
     )
 }
 

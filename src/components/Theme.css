@@ -1,8 +1,10 @@
-img {
+#buttonTheme {
+    background-image: url('../assets/theme.png');
     height: 30px;
     width: 30px;
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
+    border: none;
 }
