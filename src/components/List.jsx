@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './List.css';
+import { GetThemeValue } from './contextTheme';
 
 function List() {
+
+  const {darkTheme} = GetThemeValue();
 
   // Sets list array
   const [list, setList] = useState(() => {
@@ -75,30 +78,37 @@ function List() {
 
   return (    
     <div id='all'>
-      <div className='divPiece' id='top'>
+      <div className='divPiece' id={
+            list.length === 0 && darkTheme ? 'darkTopNoList' :
+            list.length === 0 && !darkTheme ? 'topNoList' :
+            list.length !== 0 && darkTheme ? 'darkTop' : 'top'
+      }>
         <h1>To-Do List</h1>
         <form onSubmit={handleFormSubmit}>
           <label>
-            <input type='text' value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyPress} placeholder='New Task'></input>
+            <input className={darkTheme ? 'darkInput' : 'input'} type='text' value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyPress} placeholder='New Task'></input>
           </label>
-          <button id='buttonAdd' type='button' onClick={addTask}/>
-          <button id='buttonSort' type='button' onClick={() => sort()}/>
+          <button className={darkTheme ? 'darkButton' : 'button'} id='buttonAdd' type='button' onClick={addTask}/>
+          <button className={darkTheme ? 'darkButton' : 'button'} id='buttonSort' type='button' onClick={() => sort()}/>
           </form>
       </div>
-      <div className='divPiece' id='middle'>
+      <div className='divPiece' id={darkTheme ? 'darkMiddle' : 'middle'}>
         <ul className='taskList'>{list.map((task) => 
-          <li key={task.id}>
+          <li key={task.id} id={darkTheme ? 'darkLi' : 'li'}>
             <div id='taskNoButton'>
-              <input id='checkbox' type='checkbox' checked={task.isChecked} onChange={() => handleCheckboxChange(task.id)}/>
+              <input id={darkTheme ? 'darkCheckbox' : 'checkbox'} type='checkbox' checked={task.isChecked} onChange={() => handleCheckboxChange(task.id)}/>
               <span>{task.task}</span>
             </div>
-          <button id='buttonRemove' type='button' onClick={() => removeTask(task.id)}/>
+          <button className={darkTheme ? 'darkButton' : 'button'} id='buttonRemove' type='button' onClick={() => removeTask(task.id)}/>
           </li>
         )}</ul>
       </div>
-      <div className='divPiece' id='bottom'>
+      <div className='divPiece' id={
+        list.length !== 0 && darkTheme ? 'darkBottom' :
+        list.length !== 0 && !darkTheme ? 'bottom' : 'bottomNoList'
+      }>
         <p>Tasks left: {undoneTasks}</p>
-        <button id='buttonPurge' type='button' onClick={() => purge()}/>
+        <button className={darkTheme ? 'darkButton' : 'button'} id='buttonPurge' type='button' onClick={() => purge()}/>
       </div>
     </div>
   )

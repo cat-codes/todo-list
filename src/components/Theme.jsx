@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import './Theme.css'
+import { GetThemeValue } from './contextTheme';
 
 function Theme() {
+
+    const {toggleTheme} = GetThemeValue();
 
     // Sets theme
     const [theme, setTheme] = useState('light');
@@ -15,15 +18,10 @@ function Theme() {
     // Updates local storage
     useEffect(() => {
         localStorage.setItem("theme", theme);
-    }, [theme]);
-
-    // Toggles theme
-    const toggleTheme = () => {
-        setTheme((prevTheme) => !prevTheme)
-    };    
+    }, [theme]);    
     
     return (
-        <button id='buttonTheme' type='button' onClick={toggleTheme}/>
+        <img src='src\assets\theme.png' onClick={toggleTheme}></img>
     )
 }
 

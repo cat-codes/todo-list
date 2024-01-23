@@ -1,32 +1,33 @@
-:root {
-  .background {
-    background: url('./assets/mountains.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-  }
-
-  .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } 
-
-  body {
-    margin: 0;
-  }
-
-  overflow: hidden;
-
+body, #darkBody {
+  margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 500;
-  color: #0D0D0D;
-
+  font-size: 14px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  background: url('./assets/mountains.jpg');
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  color: #0D0D0D;
+}
+
+#darkBody {
+  color: white;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} 
