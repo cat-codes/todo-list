@@ -1,7 +1,7 @@
 import './App.css'
 import Theme from './components/Theme.jsx';
 import List from './components/List.jsx'
-import { GetThemeValue } from './components/contextTheme';
+import { GetThemeValue } from './components/ContextTheme';
 
 function App() {
   const {darkTheme} = GetThemeValue();

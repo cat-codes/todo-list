@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './List.css';
-import { GetThemeValue } from './contextTheme';
+import { GetThemeValue } from './ContextTheme';
 
 function List() {
 
