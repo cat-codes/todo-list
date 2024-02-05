@@ -22,7 +22,8 @@ const Middle = () => {
             id='list'
         style={{
             background: theme === 'dark' ? 'rgba(34, 34, 59, 0.80)' : 'rgba(242, 233, 228, 0.8',
-            border: theme === 'dark' ? '2px solid #39375b' : '2px solid rgb(34, 34, 59)',
+            border: theme === 'dark' && list.length !== 0 ? '2px solid #39375b' : 
+            theme === 'light' && list.length !== 0 ? '2px solid rgb(34, 34, 59)' : 'none',
             boxShadow: theme === 'dark' ? '2px 5px 8px, rgba(242, 233, 228, 0.7)' : '2px 5px 10px rgba(74, 78, 105, 0.7)'
         }}
         >
