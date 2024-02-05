@@ -1,0 +1,53 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    padding: 15px 0;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        input {
+            width: 250px;
+            padding: 8px 15px;
+            margin: 0 10px;
+            border-radius: 50px;
+            border-style: none;
+            box-shadow: inset 2px 2px 3px #40352880;
+            cursor: text;
+        }
+
+        #inputDark::placeholder {
+            color: white
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        #buttonAdd {
+            background-image: url('../assets/plus.png');
+            transition: scale 0.3s ease;
+        }
+        
+        #buttonAdd::before {
+            content: "Add task";
+        }
+        
+        #buttonSort {
+            background-image: url('../assets/sort.png');
+            transition: scale 0.3s ease;
+        }
+        
+        #buttonSort::before {
+            content: "Sort tasks";
+        }

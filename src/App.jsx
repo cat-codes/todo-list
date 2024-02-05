@@ -1,15 +1,23 @@
 import './App.css'
-import Theme from './components/Theme.jsx';
-import List from './components/List.jsx'
-import { GetThemeValue } from './components/ContextTheme';
+import { GetThemeValue } from './components/ThemeProvider.jsx';
+import ThemeButton from './components/ThemeButton.jsx';
+import Header from './components/Header.jsx';
+import Middle from './components/Middle.jsx';
+import Footer from './components/Footer.jsx';
+import Background from './components/Background.jsx';
 
 function App() {
-  const {darkTheme} = GetThemeValue();
+  const {theme} = GetThemeValue();
+  document.body.style.color =  theme === 'dark' ? '#FFFFFF' : '#0D0D0D';
+  
   return (
     <>
-      <Theme/>
-      <div className='content' id={darkTheme ? 'darkBody' : 'body'}>
-        <List/>
+      <Background/>
+      <ThemeButton/>
+      <div id='contents'>
+        <Header/>
+        <Middle/>
+        <Footer/>
       </div>
     </>
   )

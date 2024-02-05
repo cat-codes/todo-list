@@ -1,10 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import { ContextTheme } from './components/ContextTheme.jsx'
+import { ThemeProvider } from './components/ThemeProvider.jsx'
+import { ListProvider } from './components/ListProvider.jsx'
+import Background from './components/Background.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ContextTheme>
-    <App />
-  </ContextTheme>,
+  <React.StrictMode>
+    <ThemeProvider>
+      <ListProvider>
+        <App />
+      </ListProvider>
+    </ThemeProvider>
+  </React.StrictMode>
 )

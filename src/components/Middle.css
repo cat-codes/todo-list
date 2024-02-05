@@ -1,0 +1,58 @@
+#list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    overflow-y: scroll;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-inline-start: 0;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#taskNoButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ul input:checked + span {
+    text-decoration: line-through;
+}
+
+#buttonRemove {
+    background-image: url('../assets/delete.png');
+    opacity: 0;
+}
+
+ul li:hover #buttonRemove {
+    opacity: 1;
+    transition: opacity 0.3s ease, scale 0.3s ease;
+    z-index: 100;
+}
+
+ul li:hover #buttonRemove::before {
+    content: "Remove task";
+    top: 23px;
+    left: -100%;
+    position: absolute;
+    transform: translateX(-30px)
+}

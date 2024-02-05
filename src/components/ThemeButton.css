@@ -1,0 +1,22 @@
+#button, #buttonDark {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-image: url('../assets/theme.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+}
+
+#button {
+    filter: invert(0%);
+}
+
+#buttonDark {
+    filter: invert(100%);
+}

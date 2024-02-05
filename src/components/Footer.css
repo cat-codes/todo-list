@@ -1,0 +1,17 @@
+#footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    justify-content: space-evenly;
+}
+
+
+#buttonPurge {
+    background-image: url('../assets/delete-all.png');
+    transition: scale 0.3s ease;
+}
+
+#buttonPurge::before {
+    content: "Remove all tasks";
+}
