@@ -56,3 +56,20 @@ ul li:hover #buttonRemove::before {
     position: absolute;
     transform: translateX(-30px)
 }
+
+@media screen and (max-width: 630px) {
+    #list {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #list {
+        max-width: 300px;
+        margin-bottom: 5px;
+    }
+
+    li {
+        padding: 10px 0;
+    }
+}

@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    max-width: 500px;
+    width: 500px;
     padding: 15px 0;
     border-radius: 30px;
     margin-bottom: 20px;
@@ -50,4 +50,30 @@
         
         #buttonSort::before {
             content: "Sort tasks";
+        }
+
+        @media screen and (max-width: 630px) {
+            #header {
+                max-width: 400px;
+            }
+
+            input {
+                max-width: 200px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            #header {
+                max-width: 300px;
+                padding: 10px 0;
+            }
+
+            input {
+                max-width: 130px;
+                padding: 5px 10px; 
+            }
+
+            input::placeholder {
+                font-size: 11px;
+            }
         }

@@ -15,3 +15,15 @@
 #buttonPurge::before {
     content: "Remove all tasks";
 }
+
+@media screen and (max-width: 630px) {
+    #footer {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #footer {
+        max-width: 300px;
+    }
+}
